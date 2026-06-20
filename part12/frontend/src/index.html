@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body style="background: #f0f2f5; text-align: center; padding-top: 50px;">
+    <h1>Hello from Containerized Frontend!</h1>
+    <div id="backend-data">Loading from Docker network...</div>
+    <script>
+        fetch('/api/data').then(res => res.json()).then(data => {
+            document.getElementById('backend-data').innerHTML = `<p>${data.message}</p><small>${data.dbTime}</small>`;
+        }).catch(() => { document.getElementById('backend-data').innerText = 'Backend unreachable'; });
+    </script>
+</body>
+</html>

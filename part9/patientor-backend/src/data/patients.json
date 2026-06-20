@@ -1,0 +1,18 @@
+[
+  {
+    "id": "d23ddb1c-2000-11ed-861d-0242ac120002",
+    "name": "John Doe",
+    "dateOfBirth": "1986-07-09",
+    "ssn": "090786-123X",
+    "gender": "male",
+    "occupation": "Software Engineer"
+  },
+  {
+    "id": "d23dfa0a-2000-11ed-861d-0242ac120002",
+    "name": "Jane Doe",
+    "dateOfBirth": "1990-11-23",
+    "ssn": "231190-456Y",
+    "gender": "female",
+    "occupation": "Designer"
+  }
+]

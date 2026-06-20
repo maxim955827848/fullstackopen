@@ -1,0 +1,36 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+
+jobs:
+  simple_deployment_pipeline:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies (Part 11)
+        run: npm ci
+        working-directory: ./part11
+
+      - name: Run ESLint Check
+        run: npm run lint
+        working-directory: ./part11
+
+      - name: Run Automated Tests
+        run: npm run test
+        working-directory: ./part11
+
+      - name: Simulate Deployment Build
+        run: echo "Build step bypassed/simulated successfully."
